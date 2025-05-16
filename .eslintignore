@@ -1,0 +1,8 @@
+*.css
+*.json
+*.md
+*.template
+swagger/
+dist/
+swagger-serve/
+swagger-serve.js

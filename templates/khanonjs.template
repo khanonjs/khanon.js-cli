@@ -1,0 +1,4 @@
+{
+  "version": "{{KHANONJS_VERSION}}",
+  "project_name": "{{PROJECT_NAME}}"
+}
