@@ -19,7 +19,7 @@ export class Helper {
 
   static printError(message: string) {
     Helper.hideSpinner()
-    console.log('WSF Error: ' + chalk.red(message))
+    console.log('Error: ' + chalk.red(message))
   }
 
   static showSpinner(text = ''): Promise<void> {

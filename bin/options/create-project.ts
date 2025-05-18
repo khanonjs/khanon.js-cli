@@ -12,10 +12,10 @@ export class CreateProject extends OptionBase {
   async execute() {
     console.log(chalk.cyan(`Creating new project using Khanon.js '${this.packageVersion}'...\n`))
 
-    let serviceInfo: CreateProjectInfo
+    let projectInfo: CreateProjectInfo
     let response: { continue: boolean }
     try {
-      serviceInfo = await prompt<CreateProjectInfo>([
+      projectInfo = await prompt<CreateProjectInfo>([
         {
           type: 'input',
           name: 'projectName',
@@ -27,7 +27,7 @@ export class CreateProject extends OptionBase {
       response = await prompt({
         type: 'confirm',
         name: 'continue',
-        message: `This will create folder '${serviceInfo.projectName}'. Continue?`,
+        message: `This will create folder '${projectInfo.projectName}'. Continue?`,
         initial: 'y'
       })
     } catch (error) {
@@ -37,8 +37,8 @@ export class CreateProject extends OptionBase {
 
     if (response.continue) {
       try {
-        serviceInfo.projectName = serviceInfo.projectName.toLowerCase()
-        this.create(serviceInfo)
+        projectInfo.projectName = projectInfo.projectName.toLowerCase()
+        this.create(projectInfo)
       } catch (error) {
         Helper.printError(`Uncaught error: ${error}.`)
       }
@@ -47,14 +47,14 @@ export class CreateProject extends OptionBase {
     }
   }
 
-  async create(serviceInfo: CreateProjectInfo) {
+  async create(projectInfo: CreateProjectInfo) {
     Helper.showSpinner('\nBuilding project').then(async () => {
-      const folderName = serviceInfo.projectName
+      const folderName = projectInfo.projectName
       if (fs.existsSync(folderName)) {
         Helper.printError(`Folder '${folderName}' already exists.`)
       } else {
         fs.mkdirSync(folderName)
-        await AppendBase.append(folderName, { serviceInfo }, this.packageVersion)
+        await AppendBase.append(folderName, { serviceInfo: projectInfo }, this.packageVersion)
 
         exec('npm i', { cwd: `./${folderName}` }, () => {
           this.end(`Khanon.js project created successfully in folder '${folderName}'`)

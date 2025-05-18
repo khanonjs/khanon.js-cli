@@ -36,25 +36,17 @@ const argv = yargsInstance.parseSync()
 /**
  * Entry point
  */
-let numOptions = 0
 let option: OptionBase
 
 if (Object.keys(argv).length < 3) {
   yargsInstance.showHelp()
 } else {
   optionsData.forEach((optionData) => {
-    if (argv[optionData.shortCommand] && Object.keys(argv).length < 6) {
-      numOptions++
+    if (argv[optionData.shortCommand]) {
       option = optionData.instance
     }
   })
 
-  if (numOptions === 0) {
-    Helper.printError('Please enter a valid option.')
-  } else if (numOptions > 1) {
-    Helper.printError('Please insert a single option.')
-  } else {
-    option.packageVersion = packageVersion
-    option.execute()
-  }
+  option.packageVersion = packageVersion
+  option.execute()
 }
