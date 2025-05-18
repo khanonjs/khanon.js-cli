@@ -4,5 +4,6 @@ export interface Option {
   shortCommand: string
   longCommand: string
   description: string
+  choices?: string[]
   instance: OptionBase
 }

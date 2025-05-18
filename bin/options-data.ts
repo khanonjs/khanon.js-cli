@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { Option } from './models/option'
 import { BuildDev } from './options/build-dev'
 import { BuildProd } from './options/build-prod'
@@ -9,31 +10,31 @@ export const optionsData: Option[] = [
   {
     shortCommand: 'c',
     longCommand: 'create-project',
-    description: 'Create a new Khanon.js project',
+    description: 'Create a new Khanon.js project\n',
     instance: new CreateProject()
   },
   {
     shortCommand: 'b',
     longCommand: 'build-dev',
-    description: 'Build a Khanon.js project in development mode',
+    description: 'Build the project in development mode.\n--dest [folder] | Output directory (optional).\n',
     instance: new BuildDev()
   },
   {
-    shortCommand: 'h',
+    shortCommand: 'r',
     longCommand: 'build-prod',
-    description: 'Build a Khanon.js project in production mode',
+    description: 'Build the project in production mode.\n--dest [folder] | Output directory (optional).\n',
     instance: new BuildProd()
   },
   {
     shortCommand: 's',
     longCommand: 'start-dev',
-    description: 'Start a Khanon.js project in development mode',
+    description: 'Start the project in development mode.\n--dest [folder] | Output directory (optional).\n--port [number] | Port number (optional).\n',
     instance: new StartDev()
   },
   {
     shortCommand: 'p',
     longCommand: 'start-prod',
-    description: 'Start a Khanon.js project in production mode',
+    description: 'Start the project in production mode.\n--dest [folder] | Output directory (optional).\n--port [number] | Port number (optional).\n',
     instance: new StartProd()
   }
 ]
