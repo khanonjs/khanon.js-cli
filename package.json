@@ -5,6 +5,7 @@
   },
   "version": "0.1.66-alpha.0",
   "description": "Command line interface for Khanon.js",
+  "private": false,
   "license": "MIT",
   "main": "bin/index.js",
   "bin": {
