@@ -3,7 +3,6 @@
 import chalk from 'chalk'
 import yargs from 'yargs/yargs'
 
-import { Helper } from './classes/helper'
 import { OptionBase } from './classes/option-base'
 import { optionsData } from './options-data'
 
