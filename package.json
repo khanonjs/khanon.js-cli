@@ -3,7 +3,7 @@
   "author": {
     "name": "Lorenzo Portillo"
   },
-  "version": "0.1.69-alpha.0",
+  "version": "0.1.70-alpha.0",
   "description": "Command line interface for Khanon.js",
   "private": false,
   "license": "MIT",
