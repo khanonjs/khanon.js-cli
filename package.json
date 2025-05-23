@@ -3,7 +3,7 @@
   "author": {
     "name": "Lorenzo Portillo"
   },
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Command line interface for Khanon.js",
   "private": false,
   "license": "MIT",
@@ -20,7 +20,7 @@
     "cli"
   ],
   "scripts": {
-    "build": "rimraf ./dist && tsc && cpy package.json ./dist && cpy scaffold ./dist && cpy templates ./dist",
+    "build": "rimraf ./dist && tsc && cpy package.json ./dist && cpy scaffold ./dist && cpy templates ./dist && cpy README.md ./dist",
     "release": "npm run build && cd dist && npm publish",
     "ig": "npm run build && cd dist && npm i -g .",
     "lint": "eslint ./src/**/*"
