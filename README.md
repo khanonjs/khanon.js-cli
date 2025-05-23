@@ -10,8 +10,10 @@ Default --dest folder is 'dist'
 Default --port is 3000
 
 Options:
+
       --version         Show version number                            [boolean]
       --help            Show help                                      [boolean]
+      
   -c, --create-project  Create a new Khanon.js project
 
   -b, --build-dev       Build the project in development mode.
