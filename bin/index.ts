@@ -47,6 +47,10 @@ if (Object.keys(argv).length < 3) {
     }
   })
 
-  option.packageVersion = packageVersion
-  option.execute()
+  if (option) {
+    option.packageVersion = packageVersion
+    option.execute()
+  } else {
+    yargsInstance.showHelp()
+  }
 }
