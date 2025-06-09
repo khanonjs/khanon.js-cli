@@ -9,6 +9,7 @@ export class AppendBase extends AppendFiles {
 
   static async append(dstFolder: string, info: AppendBaseInfo, packageVersion: string) {
     fs.cpSync(AppendBase.getScaffoldFolder(AppendBase.scaffoldingFolder), dstFolder, { recursive: true })
+    fs.rmSync(`${dstFolder}/public/assets/dummy`, { force: true })
     Helper.copyTemplateFile('khanonjs', `./${dstFolder}/khanonjs.conf`, [
       {
         parameter: 'KHANONJS_VERSION',
