@@ -27,7 +27,7 @@ optionsData.forEach((optionData) => Object.defineProperty(
 ))
 
 const yargsInstance = yargs(process.argv.slice(2))
-  .usage('\nKhanon.js Command Line Interface (CLI)\n\nUsage: ' + chalk.cyan('khanon [option] [args]\n\n') + chalk.yellow('Default --dest folder is \'dist\'\nDefault --port is 3000'))
+  .usage(`\nKhanon.js Command Line Interface (CLI) - v${packageVersion}\n\nUsage: ${chalk.cyan('khanon [option] [args]\n\n')}${chalk.yellow('Default --dest folder is \'dist\'\nDefault --port is 3000')}`)
   .help(true)
   .options(yargsOptions)
 
